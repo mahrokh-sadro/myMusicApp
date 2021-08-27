@@ -1,7 +1,7 @@
 
 
 import { useState } from 'react';
-import './player.js'
+import './player.js';
 const [songs, setSongs] = useState([
     {
         artist: "aaa",
@@ -33,7 +33,11 @@ const [nextSongIdx, setNextSongIdx] = useState(currentSongIdx + 1);
 
 function App() {
     return (
-        <Player />
+        <Player
+            song={songs[currentSongIdx]}
+            nextSong={songs[nextSongIdx]}
+
+        />
     )
 }
 

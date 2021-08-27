@@ -11,10 +11,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+
 
 import Grid from '@material-ui/core/Grid';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+// import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayCircleFilledSharpIcon from '@material-ui/icons/PlayCircleFilledSharp';
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function RecipeReviewCard() {
+export default function ContentCard() {
   const classes = useStyles();
 
 
@@ -109,15 +109,7 @@ export default function RecipeReviewCard() {
 
 
       </CardContent>
-      {/* <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
 
-      </CardActions> */}
 
     </Card>
   );
