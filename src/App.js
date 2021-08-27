@@ -1,7 +1,7 @@
 
 
 import { useState } from 'react';
-
+import './player.js'
 const [songs, setSongs] = useState([
     {
         artist: "aaa",
@@ -27,12 +27,14 @@ const [songs, setSongs] = useState([
     },
 ])
 
+const [currentSongIdx, setCurrentSongIdx] = useState(0);
+const [nextSongIdx, setNextSongIdx] = useState(currentSongIdx + 1);
+
+
 function App() {
     return (
-        <div>
-
-        </div>
+        <Player />
     )
 }
 
-export default App
+export default App;
