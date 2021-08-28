@@ -33,28 +33,16 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius: 20,
 
     }, subColor: {
-      color: '#fff',
+      // color: '#fff',
       textAlign: "center",
-      paddingBottom: '10%',
+      // paddingBottom: '5%',
     },
     media: {
       height: 0,
       paddingTop: '56.25%', // 16:9
       // borderRadius: "50%"
     },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
-    avatar: {
-      backgroundColor: red[500],
-    },
+
   }),
 );
 
@@ -67,7 +55,7 @@ export default function ContentCard(props) {
     <Card className={classes.root} elevation={4}>
       <CardHeader
 
-        subheader={<Typography className={classes.subColor}>Playing Now</Typography>}
+        subheader={<Typography color="error" className={classes.subColor}>Playing Now</Typography>}
       />
       <CardMedia
         className={classes.media}
@@ -77,7 +65,7 @@ export default function ContentCard(props) {
       <CardContent>
         <Grid container>
           <Grid>
-            <Typography variant="body2" color="error" component="p" align="left">
+            <Typography variant="body2" color="error" component="p" align="center">
               <h3 >{props.song.singer}</h3>
               <subtitle1>{props.song.title}</subtitle1>
             </Typography>
@@ -95,16 +83,29 @@ export default function ContentCard(props) {
         <br />
         <Grid container paddingTop="12rem" alignContent="center" color="error">
           <IconButton color="secondary">
-            <SkipPreviousIcon fontSize="large" color="error" />
+            <SkipPreviousIcon fontSize="large" color="error" onClick={() => props.nextLastSong()} />
           </IconButton>
-          <IconButton elevation={10}>
-            <PlayCircleFilledSharpIcon fontSize="large" color="error" />
+          <IconButton elevation={10}
+            onClick={() =>
+              props.setIsPlaying(!props.isPlaying)
+            }
+
+          >
+
+            <PlayCircleFilledSharpIcon
+              fontSize="large"
+              color="error"
+
+            />
           </IconButton>
           <IconButton >
-            <SkipNextIcon fontSize="large" />
+            <SkipNextIcon fontSize="large" onClick={() => props.nextLastSong()} />
           </IconButton>
         </Grid>
-
+        <Typography variant="body2" color="error" component="p" align="center">
+          <subtitle1>Upcoming Song</subtitle1><br />
+          <subtitle1>{props.nextSong} by {props.nextSong}</subtitle1>
+        </Typography>
 
 
 
