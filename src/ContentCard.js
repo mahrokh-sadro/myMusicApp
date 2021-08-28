@@ -58,11 +58,12 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function ContentCard() {
+export default function ContentCard(props) {
   const classes = useStyles();
 
 
   return (
+
     <Card className={classes.root} elevation={4}>
       <CardHeader
 
@@ -77,7 +78,7 @@ export default function ContentCard() {
         <Grid container>
           <Grid>
             <Typography variant="body2" color="error" component="p" align="left">
-              <h3 >singer name</h3>
+              <h3 >{props.song.artist}</h3>
               <subtitle1>song name</subtitle1>
             </Typography>
           </Grid>
