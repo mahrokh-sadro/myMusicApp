@@ -33,11 +33,23 @@ function App() {
 
     const [currentSongIdx, setCurrentSongIdx] = useState(0);
     const [nextSongIdx, setNextSongIdx] = useState(currentSongIdx + 1);
+
+    useEffect(() => {
+        setNextSongIdx(() => {
+            if (currentSongIdx + 1 > songs.length - 1) return 0;
+            return currentSongIdx + 1;
+        })
+    }, [currentSongIdx])
+
+
+
     return (
         <div>
             { <Player
-                song={songs[currentSongIdx]}
-                nextSong={songs[nextSongIdx]}
+                currentSongIdx={currentSongIdx}
+                setCurrentSongIdx={setCurrentSongIdx}
+                nextSongIdx={nextSongIdx}
+                songs={songs}
 
             />}
         </div>
