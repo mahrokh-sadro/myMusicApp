@@ -71,15 +71,15 @@ export default function ContentCard(props) {
       />
       <CardMedia
         className={classes.media}
-        image="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+        image={props.song.img_src}
         title="Paella dish"
       />
       <CardContent>
         <Grid container>
           <Grid>
             <Typography variant="body2" color="error" component="p" align="left">
-              <h3 >{props.song.artist}</h3>
-              <subtitle1>song name</subtitle1>
+              <h3 >{props.song.singer}</h3>
+              <subtitle1>{props.song.title}</subtitle1>
             </Typography>
           </Grid>
           <Grid align="right">
